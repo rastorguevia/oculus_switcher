@@ -18,34 +18,34 @@ public final class Bootstrap {
     private static boolean isContains;
 
     public void init() {
-
-        Application.launch(Interface.class);
-
         commandOutput = new ArrayList<>();
+        setLaunchType();
+        Application.launch(Interface.class);
+    }
 
+    public void setLaunchType() {
         try {
             final ProcessBuilder pb = new ProcessBuilder();
             pb.redirectOutput(Redirect.INHERIT);
             pb.redirectError(Redirect.INHERIT);
 
             pb.command(CMD, C, CONFIGURATION_DATA);
-            final BufferedReader input = new BufferedReader(new InputStreamReader(pb.start().getInputStream()));
 
+            final BufferedReader input = new BufferedReader(new InputStreamReader(pb.start().getInputStream()));
             String line;
             while((line = input.readLine()) != null) {
                 commandOutput.add(line);
             }
+
             //the fourth line contains information about the startup type
             if (!commandOutput.isEmpty()) isContains = commandOutput.get(4).contains(DEMAND);
             if (!isContains) {
                 pb.command(CMD, C, SET_TYPE + DEMAND);
                 pb.start();
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 }
