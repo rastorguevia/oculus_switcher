@@ -21,7 +21,7 @@ public final class Interface extends Application {
         Parent mainScene = FXMLLoader.load(new File(MAIN_SCENE).toURL());
         stage.setScene(new Scene(mainScene, 800, 600));
 
-        stage.getIcons().add(new Image(LOGO));
+        stage.getIcons().add(new Image(LOGO_YELLOW));
 
         stage.show();
 

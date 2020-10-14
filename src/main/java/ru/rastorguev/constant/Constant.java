@@ -16,6 +16,10 @@ public final class Constant {
 
     public static final String MAIN_SCENE = "src/main/java/ru/rastorguev/view/fxml/scene.fxml";
 
-    public static final String LOGO = "file:src/main/java/ru/rastorguev/view/image/logo.png";
+    public static final String LOGO_YELLOW = "file:src/main/java/ru/rastorguev/view/image/logo-yellow.png";
+
+    public static final String LOGO_GREEN = "file:src/main/java/ru/rastorguev/view/image/logo-green.png";
+
+    public static final String LOGO_RED = "file:src/main/java/ru/rastorguev/view/image/logo-red.png";
 
 }
