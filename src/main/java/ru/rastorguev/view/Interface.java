@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public final class Interface extends Application {
         final ProcessBuilder pb = new ProcessBuilder();
         pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
         pb.redirectError(ProcessBuilder.Redirect.INHERIT);
-        pb.command(CMD, C, CONFIGURATION_DATA);
+        pb.command(CMD, C, START);
         pb.start();
     }
 
@@ -36,7 +36,15 @@ public final class Interface extends Application {
         final ProcessBuilder pb = new ProcessBuilder();
         pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
         pb.redirectError(ProcessBuilder.Redirect.INHERIT);
-        pb.command(CMD, C, CONFIGURATION_DATA);
+        pb.command(CMD, C, STOP);
+        pb.start();
+    }
+
+    public void restart(ActionEvent event) throws IOException {
+        final ProcessBuilder pb = new ProcessBuilder();
+        pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+        pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+        pb.command(CMD, C, RESTART);
         pb.start();
     }
 

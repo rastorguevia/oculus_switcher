@@ -22,4 +22,10 @@ public final class Constant {
 
     public static final String LOGO_RED = "file:src/main/java/ru/rastorguev/view/image/logo-red.png";
 
+    public static final String START = "sc start OVRService";
+
+    public static final String STOP = "sc stop OVRService";
+
+    public static final String RESTART = "sc stop OVRService && sc start OVRService";
+
 }
